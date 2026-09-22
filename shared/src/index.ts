@@ -13,10 +13,15 @@ export const registerInputSchema = z.object({
   email: z.email('Enter a valid email address'),
 });
 
+export const deleteOutputSchema = z.object({
+  success: z.boolean(),
+});
+
 export const usersContract = {
   users: {
     list: oc.output(z.array(userSchema)),
     register: oc.input(registerInputSchema).output(userSchema),
+    delete: oc.input(z.object({ id: z.union([z.number(), z.string()]) })).output(deleteOutputSchema),
   },
 };
 

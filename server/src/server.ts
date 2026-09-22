@@ -54,7 +54,7 @@ async function handleRpc(request: FastifyRequest, reply: FastifyReply) {
 app.all("/rpc", handleRpc);
 app.all("/rpc/*", handleRpc);
 
-// app.register(userRoutes);
+app.register(userRoutes); // TODO: Remove this and related routes once the web client is updated to use oRPC instead of REST.
 
 const close = async (signal: string) => {
   app.log.info({ signal }, "Shutting down");

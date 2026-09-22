@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./shared" },
+    { "path": "./server" },
+    { "path": "./client/web" },
+    { "path": "./client/native" }
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/.expo/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}

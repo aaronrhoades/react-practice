@@ -25,6 +25,12 @@ export async function registerUser(db: UserDatabase, body: UserBody) {
   return rows[0];
 }
 
+export async function deleteUser(db: UserDatabase, id: number) {
+  const { rowCount } = await db.query('DELETE FROM users WHERE id = $1', [id]);
+  const success: boolean = Boolean(rowCount && rowCount > 0);
+  return { success };
+}
+
 // GET /api/users
 export async function getUsersHandler(this: any, request: FastifyRequest, reply: FastifyReply) {
   return listUsers(this.pg);
@@ -82,7 +88,7 @@ export async function deleteUserHandler(this: any, request: FastifyRequest<{ Par
   const { rowCount } = await this.pg.query('DELETE FROM users WHERE id = $1', [id]);
 
   if (rowCount === 0) {
-    return reply.status(404).send({ error: 'User not found' });
+    return reply.status(404).send({ success: false, error: 'User not found' });
   }
-  return reply.status(200).send({ message: 'User deleted successfully' });
+  return reply.status(200).send({ success: true });
 }

@@ -2,7 +2,7 @@ import { usersContract } from '@my-app/shared';
 import { implement, ORPCError } from '@orpc/server';
 import type { FastifyInstance } from 'fastify';
 
-import { listUsers, registerUser } from '../controllers/userController.js';
+import { listUsers, registerUser, deleteUser } from '../controllers/userController.js';
 
 type UserContext = {
   app: FastifyInstance;
@@ -21,5 +21,9 @@ export const userRouter = {
       }
       throw error;
     }
+  }),
+  delete: os.users.delete.handler(async ({ context, input }) => {
+    const id : number  = parseInt(input.id as string, 10);
+    return await deleteUser(context.app.pg, id);
   }),
 };
