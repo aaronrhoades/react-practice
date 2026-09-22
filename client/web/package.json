@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@my-app/shared": "file:../../shared",
+    "@orpc/client": "^1.15.0",
+    "@orpc/contract": "^1.15.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

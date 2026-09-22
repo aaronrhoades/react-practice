@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.15",
+    "@my-app/shared": "file:../../shared",
+    "@orpc/client": "^1.15.0",
+    "@orpc/contract": "^1.15.0",
     "expo": "~57.0.19",
     "expo-constants": "~57.0.17",
     "expo-device": "~57.0.1",
