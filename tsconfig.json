@@ -4,7 +4,8 @@
     { "path": "./shared" },
     { "path": "./server" },
     { "path": "./client/web" },
-    { "path": "./client/native" }
+    { "path": "./client/native" },
+    { "path": "./client/shared" }
   ],
   "exclude": [
     "**/node_modules/**",
