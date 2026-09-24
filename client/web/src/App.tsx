@@ -1,10 +1,10 @@
-import Register from './components/Register'
+import { Outlet } from '@tanstack/react-router'
 import './App.css'
 
 function App() {
   return (
     <main className="page-shell">
-      <Register />
+      <Outlet />
     </main>
   )
 }
