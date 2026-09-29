@@ -1,0 +1,16 @@
+{
+  "name": "@my-app/client-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "native",
+    "web",
+    "shared"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace=@my-app/client-shared",
+    "build:web": "npm run build:shared && npm run build --workspace=web",
+    "start:native": "npm run build:shared && npm run start --workspace=my-app",
+    "start:web": "npm run build:shared && npm run dev --workspace=web"
+  }
+}

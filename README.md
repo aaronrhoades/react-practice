@@ -7,9 +7,13 @@
 - in `/client/native` create `.env.local` as a copy of .env to insert `http://<your-ip-address>:3000` for connecting to the local node server.
 
 ## Starting the Apps
-- `npm run dev` or `npm run start` depending on the `package.json` file.
+- **Server:** `npm run dev` or `npm run start` depending on the `package.json` file.
+- **Client:** From client, run `npm ci`, then `npm run start:native` or `npm run start:web`. Those scripts build the shared hooks before starting either app.
 
-## Updating packages
+## Updating Packages
+
+This should be the way to manually update packages and run each server and client (web). Follow **Client** step under "Starting the Apps" to build and start the app in one command.
+
 ```
 cd C:\dev\react-native\my-app\shared
 npm run build
