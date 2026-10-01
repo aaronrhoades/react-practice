@@ -27,3 +27,4 @@ export const usersContract = {
 
 export type User = z.infer<typeof userSchema>;
 export type RegisterInput = z.infer<typeof registerInputSchema>;
+export type DeleteOutput = z.infer<typeof deleteOutputSchema>;
